@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .wrapper {
+    height: 175%;
+    width: 100%;
+    background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
+    position: absolute;
+  }
+  
+  .wrapper p {
+    height: 60px;
+    width: 60px;
+    border: 2px solid rgba(25, 255, 255, 0.7);
+    border-radius: 50px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    animation: 4s linear infinite;
+  }
+  p .dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 20%;
+    right: 20%;
+  }
+  .wrapper p:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation: animate 8s linear infinite;
+  }
+  .wrapper p:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation: animate 10s linear infinite;
+  }
+  .wrapper p:nth-child(3) {
+    top: 40%;
+    left: 40%;
+    animation: animate 3s linear infinite;
+  }
+
+  .wrapper p:nth-child(5) {
+    top: 90%;
+    left: 10%;
+    animation: animate 9s linear infinite;
+  }
+  .wrapper p:nth-child(6) {
+    top: 30%;
+    left: 60%;
+    animation: animate 5s linear infinite;
+  }
+ 
+  .wrapper p:nth-child(9) {
+    top: 50%;
+    left: 50%;
+    animation: animate 6s linear infinite;
+  }
+  .wrapper p:nth-child(10) {
+    top: 45%;
+    left: 20%;
+    animation: animate 10s linear infinite;
+  }
+  .wrapper p:nth-child(11) {
+    top: 10%;
+    left: 90%;
+    animation: animate 9s linear infinite;
+  }
+  .wrapper p:nth-child(12) {
+    top: 20%;
+    left: 70%;
+    animation: animate 7s linear infinite;
+  }
+  .wrapper p:nth-child(13) {
+    top: 20%;
+    left: 20%;
+    animation: animate 8s linear infinite;
+  }
+  .wrapper p:nth-child(14) {
+    top: 60%;
+    left: 5%;
+    animation: animate 6s linear infinite;
+  }
+  .wrapper p:nth-child(15) {
+    top: 90%;
+    left: 80%;
+    animation: animate 9s linear infinite;
+  }
+  @keyframes animate {
+    0% {
+      transform: scale(0) translateY(0) rotate(70deg);
+    }
+    100% {
+      transform: scale(1.3) translateY(-100px) rotate(360deg);
+    }
+  }
+  
+  .waviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: 60px;
+  }
+  .waviy span {
+    font-family: 'Oswald', sans-serif; 
+    position: relative;
+    display: inline-block;
+    color: #ff0000;
+    text-transform: uppercase;
+    animation: waviy 2s infinite;
+    animation-delay: calc(.1s * var(--i));
+    
+  }
+  @keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+  }
+
+
+
+h2 {
+    text-align: center;
+    color: #fc5c5c;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+}
+
+h3 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    color:#fc5c5c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    color:#fc5c5c;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h5 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  color:#fc5c5c;
+
+
+}
+
+input {
+    text-align: center;
+    opacity: 45;
+}
+
+#filler {
+    text-align: center;
+}
+
+html {
+    text-align: center;
+    
+}
+
+label{
+    color:#fc5c5c;
+    font-family: 'Lobster', cursive;
+    font-size: 18px;
+}
+
+#memeDemo{
+  margin: auto;
+}
+
+
+#downloadBtn {
+  position: relative;
+  display: inline-block;
+  height: 50px;
+  width: 200px;
+  line-height: 50px;
+  padding: 0;
+  border-radius: 50px;
+  background: #40bdf7;
+  border: 2px solid #fc5c5c;
+  margin: 10px;
+  transition: .5s;
+}
+
+
+#downloadBtn:hover {
+  background-color: #fc5c5c;
+}
+
+
+#downloadBtn:hover span.logo {
+  left: 100%;
+  margin-left: -45px;
+  background-color: #40bdf7;
+  color: #fc5c5c;
+}
+
+#downloadBtn:hover span.title {
+  left: 40px;
+  opacity: 0;
+}
+
+#downloadBtn:hover span.titleHov {
+  opacity: 1;
+  left: 40px;
+}
+
+#downloadBtn span.logo {
+  display: block;
+  background-color: #fc5c5c;
+  color: #40bdf7;
+  position: absolute;
+  float: left;
+  margin: 5px;
+  line-height: 42px;
+  height: 40px;
+  width: 40px;
+  top: 0;
+  left: 0;
+  transition: .5s;
+  border-radius: 50%;
+}
+
+#downloadBtn span.title,
+#downloadBtn span.titleHov {
+    position: absolute;
+    left: 90px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fc5c5c;
+    transition: .5s;
+}
+
+#downloadBtn span.titleHov {
+  color: #fdfdfd;
+}
+
+.title {
+  font-family: 'Lobster', cursive;
+
+}
+.titleHov {
+  font-family: 'Lobster', cursive;
+}
+
+.failsafe {
+  color: #fdfdfd;
+  font-family: 'Lobster', cursive;;
+  font-style: italic;
+}
