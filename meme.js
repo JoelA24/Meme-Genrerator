@@ -64,8 +64,12 @@ const canvas = document.createElement('canvas');
         previewImage.style.maxWidth = '400px'
         previewImage.style.maxHeight = '400px'
        
-        
-
+        // Push generated meme to savedMemes array
+        savedMemes.push({
+          topText: topText,
+          bottomText: bottomText,
+          imageUrl: image.src
+        });
       };
     }
 
@@ -82,3 +86,81 @@ const canvas = document.createElement('canvas');
     // Generate meme on image upload
     document.getElementById('imgUpload').addEventListener('change', generateMeme);
     document.getElementById('imgURL').addEventListener('change', generateMeme);
+
+// Add a button to save the generated meme
+const saveButton = document.getElementById('saveButton');
+saveButton.addEventListener('click', () => {
+// Create a new image element to display the saved meme
+const savedMeme = {
+imageUrl: canvas.toDataURL('image/png'),
+topText: document.getElementById('topText').value.toUpperCase(),
+bottomText: document.getElementById('bottomText').value.toUpperCase()
+};
+savedMemes.push(savedMeme);
+const savedMemeElement = document.createElement('div');
+const savedMemeImage = new Image();
+savedMemeImage.src = savedMeme.imageUrl;
+savedMemeElement.appendChild(savedMemeImage);
+savedMemeElement.innerHTML += <p>${savedMeme.topText}</p>;
+savedMemeElement.innerHTML += <p>${savedMeme.bottomText}</p>;
+const deleteButton = document.createElement('button');
+deleteButton.innerText = 'Delete';
+deleteButton.addEventListener('click', () => {
+// Remove the saved meme from the array and from the page
+const index = savedMemes.indexOf(savedMeme);
+if (index !== -1) {
+savedMemes.splice(index, 1);
+savedMemesContainer.removeChild(savedMemeElement);
+}
+});
+savedMemeElement.appendChild(deleteButton);
+savedMemesContainer.appendChild(savedMemeElement);
+});
+
+// Initialize array to hold saved memes
+const savedMemes = [];
+
+// Get container for saved memes
+const savedMemesContainer = document.getElementById('savedMemes');
+
+// Display saved memes on load
+savedMemes.forEach((savedMeme) => {
+const savedMemeElement = document.createElement('div');
+const savedMemeImage = new Image();
+savedMemeImage.src = savedMeme.imageUrl;
+savedMemeElement.appendChild(savedMemeImage);
+savedMemeElement.innerHTML += <p>${savedMeme.topText}</p>;
+savedMemeElement.innerHTML += <p>${savedMeme.bottomText}</p>;
+const deleteButton = document.createElement('button');
+deleteButton.innerText = 'Delete';
+deleteButton.addEventListener('click', () => {
+// Remove the saved meme from the array and from the page
+const index = savedMemes.indexOf(savedMeme);
+if (index !== -1) {
+savedMemes.splice(index, 1);
+savedMemesContainer.removeChild(savedMemeElement);
+}
+});
+savedMemeElement.appendChild(deleteButton);
+savedMemesContainer.appendChild(savedMemeElement);
+});
+
+// Update top font size
+document.getElementById('topSize').addEventListener('input', (event) => {
+topFontSize = event.target.value;
+generateMeme();
+});
+
+// Update bottom font size
+document.getElementById('bottomSize').addEventListener('input', (event) => {
+bottomFontSize = event.target.value;
+generateMeme();
+});
+
+// Generate meme on image upload
+document.getElementById('imgUpload').addEventListener('change', generateMeme);
+document.getElementById('imgURL').addEventListener('change', generateMeme);
+
+// Generate preview in real-time
+document.getElementById('topText').addEventListener('input', generateMeme);
+document.getElementById('bottomText').addEventListener('input', generateMeme);
