@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meme.css">
+    <title>DANK MEME GENERATOR</title>
+</head>
+<div class="wrapper">
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <p><span class="dot"></span></p>
+            <div>
+            <body>
+                <div class="waviy">
+                    <span style="--i:1">M</span>
+                    <span style="--i:2">E</span>
+                    <span style="--i:3">M</span>
+                    <span style="--i:4">E</span>
+                    <br>
+                    <span style="--i:5">G</span>
+                    <span style="--i:6">E</span>
+                    <span style="--i:7">N</span>
+                    <span style="--i:8">E</span>
+                    <span style="--i:9">R</span>
+                    <span style="--i:10">A</span>
+                    <span style="--i:11">T</span>
+                    <span style="--i:12">O</span>
+                    <span style="--i:13">R</span>
+                 
+                </div>
+                   <br>
+                   <br>
+                   <br>
+                   <h5>Preview Will Load AFTER You Upload Your Image!</h5>
+                <h3>Upload Your Image</h3>
+                    <div id="imgs">
+                        <label for="imgUpload">Local Image:</label>
+                        <input type="file" id="imgUpload">
+                        <br>
+                        <h4>Or.   .   .</h4>
+                        <label for="imgURL">Image URL:</label>
+                        <input type="url" id="imgURL">
+                    </div>
+    
+            </div>
+    
+            <div>
+                <h3>What Does It Say?</h3>
+                <div id="filler" onkeyup="generateMeme()">
+                    <label for="topText" class="direction">Top Text:</label>
+                    <input type="text" id="topText">
+                    <label for="bottomText">Bottom Text:</label>
+                    <input type="text" id="bottomText">
+                </div>
+            </div>
+            <div>
+                <h3>How Big Is The Font?</h3>
+                <div id="fontSize" onchange="generateMeme()">
+                    <label for="topSize" class="direction">Top Font Size:</label>
+                    <input class='fontSize' type="range" id="topSize" min="20" max="72"  value="36">
+                    <label class='fontSize' for="bottomSize" class="direction">Bottom Font Size:</label>
+                    <input type="range" id="bottomSize" min="20" max="72"   value="36">
+                </div>
+            </div>
+            <div id="dwnld">
+                <h3>Time to Download!</h3>
+            
+                
+                    <a download="meme.png" href="#" id="downloadBtn">
+                        <span class="logo"><i class="download"></i></span>
+                        <span class="title">Download</span>
+                        <span class="titleHov">Download</span>
+                    </a>
+                    <div class="failsafe">In the case this button does not work:</div>
+                    <div class="failsafe">Right Click the image, and save it to your computer</div>
+                </div>
+            
+            <div id='preview'>
+                <h3>Preview</h3>
+    
+                <div id="memeDemo" style="max-width: 400px;"></div>
+            </div>
+
+            
+            <script src="meme.js"></script>
+        </div>
+        </body>
+    </div>
+</div> 
+</html>
